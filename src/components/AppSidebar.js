@@ -128,6 +128,9 @@ const AppSidebar = () => {
           )}
           {userInfoFromLocalStorage && userInfoFromLocalStorage.isAdmin === false && (
             <>
+              <NavLink to="/dashboard" className="navDesgin">
+                <h6 className="navDesgin">Dashboard</h6>
+              </NavLink>
               <NavLink to="/checking/check" className="navDesgin">
                 <h6 className="navDesgin">Manual Check</h6>
               </NavLink>
