@@ -82,110 +82,70 @@ const WidgetsDropdown = () => {
   return (
     <CRow>
       <CCol sm={6} lg={3}>
-        <CWidgetStatsA
-          className="mb-4"
-          color="primary"
-          value={
-            <div>
-              <h2>User</h2>
-              <h4>{loading ? 'loading...' : user.length - 1}</h4>
-            </div>
-          }
-          title=""
-          action={
-            <CDropdown alignment="end">
-              <CDropdownToggle color="transparent" caret={false} className="p-0">
-                <CIcon icon={cilOptions} className="text-high-emphasis-inverse" />
-              </CDropdownToggle>
-              <CDropdownMenu>
-                <Link to="checking/userlist" style={{ textDecoration: 'none' }}>
-                  <CDropdownItem>User</CDropdownItem>
-                </Link>
-              </CDropdownMenu>
-            </CDropdown>
-          }
-        />
+        <Link to="checking/userlist" style={{ textDecoration: 'none' }}>
+          <CWidgetStatsA
+            className="mb-4"
+            color="primary"
+            value={
+              <div>
+                <h2>User</h2>
+                <h4>{loading ? 'loading...' : user.length - 1}</h4>
+              </div>
+            }
+            title=""
+          />
+        </Link>
       </CCol>
       <CCol sm={6} lg={3}>
-        <CWidgetStatsA
-          className="mb-4"
-          color="info"
-          value={
-            <>
-              <div>
-                <h2>Present</h2>
-                <h4>{loading ? 'loading...' : present.length}</h4>
-              </div>
-            </>
-          }
-          title=""
-          action={
-            <CDropdown alignment="end">
-              <CDropdownToggle color="transparent" caret={false} className="p-0">
-                <CIcon icon={cilOptions} className="text-high-emphasis-inverse" />
-              </CDropdownToggle>
-              <CDropdownMenu>
-                <Link to="checking/filterUserTable" style={{ textDecoration: 'none' }}>
-                  <CDropdownItem>Present</CDropdownItem>
-                </Link>
-              </CDropdownMenu>
-            </CDropdown>
-          }
-        />
+        <Link to="checking/filterUserTable" style={{ textDecoration: 'none' }}>
+          <CWidgetStatsA
+            className="mb-4"
+            color="info"
+            value={
+              <>
+                <div>
+                  <h2>Present</h2>
+                  <h4>{loading ? 'loading...' : present.length}</h4>
+                </div>
+              </>
+            }
+            title=""
+          />
+        </Link>
       </CCol>
       <CCol sm={6} lg={3}>
-        <CWidgetStatsA
-          className="mb-4"
-          color="warning"
-          value={
-            <>
-              <div>
-                <h2>Absent</h2>
-                <h4>{loading ? 'loading...' : user.length - present.length - 1}</h4>
-              </div>
-            </>
-          }
-          title=""
-          action={
-            <CDropdown alignment="end">
-              <CDropdownToggle color="transparent" caret={false} className="p-0">
-                <CIcon icon={cilOptions} className="text-high-emphasis-inverse" />
-              </CDropdownToggle>
-              <CDropdownMenu>
-                <Link to="checking/filterUserTable" style={{ textDecoration: 'none' }}>
-                  <CDropdownItem>Absent</CDropdownItem>
-                </Link>
-              </CDropdownMenu>
-            </CDropdown>
-          }
-        />
+        <Link to="checking/filterUserTable" style={{ textDecoration: 'none' }}>
+          <CWidgetStatsA
+            className="mb-4"
+            color="warning"
+            value={
+              <>
+                <div>
+                  <h2>Absent</h2>
+                  <h4>{loading ? 'loading...' : user.length - present.length - 1}</h4>
+                </div>
+              </>
+            }
+            title=""
+          />
+        </Link>
       </CCol>
       <CCol sm={6} lg={3}>
-        <CWidgetStatsA
-          className="mb-4"
-          color="danger"
-          value={
-            <>
-              <div>
-                <h2>Over Time</h2>
-                <h4>{loading ? 'loading...' : over.length}</h4>
-              </div>
-            </>
-          }
-          title=""
-          action={
-            <CDropdown alignment="end">
-              <CDropdownToggle color="transparent" caret={false} className="p-0">
-                <CIcon icon={cilOptions} className="text-high-emphasis-inverse" />
-              </CDropdownToggle>
-              <CDropdownMenu>
-                <Link to="checking/filterUserTable" style={{ textDecoration: 'none' }}>
-                  <CDropdownItem>Over Time</CDropdownItem>
-                </Link>
-              </CDropdownMenu>
-            </CDropdown>
-          }
-        />
+        <Link to="checking/filterUserTable" style={{ textDecoration: 'none' }}>
+          <CWidgetStatsA
+            className="mb-4"
+            color="danger"
+            value={
+              <>
+                <div>
+                  <h2>Over Time</h2>
+                  <h4>{loading ? 'loading...' : over.length}</h4>
+                </div>
+              </>
+            }
+            title=""
+          />
+        </Link>
       </CCol>
     </CRow>
   )

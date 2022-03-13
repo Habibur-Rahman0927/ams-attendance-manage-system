@@ -18,10 +18,12 @@ import CIcon from '@coreui/icons-react'
 import { cilLockLocked } from '@coreui/icons'
 import { useHistory } from 'react-router-dom'
 import { useRef } from 'react'
+import Card from 'src/views/theme/typography/Card'
 
 const Login = () => {
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
+  const [message, setMessage] = useState('')
   const form = useRef()
   const history = useHistory()
   const handleSubmit = async (e) => {
@@ -36,8 +38,9 @@ const Login = () => {
       { email, password },
       config,
     )
+    setMessage(data.msg)
     localStorage.setItem('userTime', JSON.stringify(data))
-    if (data) {
+    if (data._id && data.email) {
       history.push('/dashboard')
     } else {
       history.push('/login')
@@ -51,9 +54,10 @@ const Login = () => {
             <CCardGroup>
               <CCard className="p-4 ">
                 <CCardBody>
+                  {message && <Card message={message} />}
                   <CForm ref={form} onSubmit={handleSubmit}>
                     <h1>Login</h1>
-                    <p className="text-medium-emphasis">Sign In to your account</p>
+                    <p className="text-medium-emphasis">Log In to your account</p>
                     <CInputGroup className="mb-3">
                       <CInputGroupText>@</CInputGroupText>
                       <CFormInput

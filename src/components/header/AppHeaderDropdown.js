@@ -20,7 +20,7 @@ const AppHeaderDropdown = () => {
     ? JSON.parse(localStorage.getItem('userTime'))
     : null
   const clearLocalStorage = () => {
-    history.push('/login')
+    history.push('/home')
     localStorage.removeItem('userTime')
   }
   return (

@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { HashRouter, Route, Switch } from 'react-router-dom'
 import './scss/style.scss'
+import HomePage from './views/pages/login/HomePage'
 // import Table from './views/theme/colors/Table'
 import EditUser from './views/theme/colors/EditUser'
 import ActivationEmails from './views/theme/typography/ActivetionEmails'
@@ -26,6 +27,12 @@ class App extends Component {
         <React.Suspense fallback={loading}>
           <Switch>
             <Route exact path="/login" name="Login Page" render={(props) => <Login {...props} />} />
+            <Route
+              exact
+              path="/home"
+              name="Home Page"
+              render={(props) => <HomePage {...props} />}
+            />
             <Route
               exact
               path="/register"
