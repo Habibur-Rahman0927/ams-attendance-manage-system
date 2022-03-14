@@ -30,7 +30,7 @@ const AppContent = () => {
               )
             )
           })}
-          {userInfoFromLocalStorage._id && userInfoFromLocalStorage.email ? (
+          {userInfoFromLocalStorage ? (
             <Redirect from="/" to="/dashboard" />
           ) : (
             <Redirect from="/" to="/home" />

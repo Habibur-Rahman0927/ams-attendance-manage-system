@@ -38,8 +38,11 @@ const Login = () => {
       { email, password },
       config,
     )
-    setMessage(data.msg)
-    localStorage.setItem('userTime', JSON.stringify(data))
+    if (data.msg) {
+      setMessage(data.msg)
+    } else {
+      localStorage.setItem('userTime', JSON.stringify(data))
+    }
     if (data._id && data.email) {
       history.push('/dashboard')
     } else {

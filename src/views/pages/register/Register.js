@@ -22,10 +22,6 @@ const Register = () => {
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
   const [message, setMessage] = useState('')
-  // const history = useHistory()
-  // const userInfoFromLocalStorage = localStorage.getItem('userTime')
-  //   ? JSON.parse(localStorage.getItem('userTime'))
-  //   : null
   const handleSubmit = (e) => {
     e.preventDefault()
     const getRandomNumber = async () => {
