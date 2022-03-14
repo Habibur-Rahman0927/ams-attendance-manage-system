@@ -5,6 +5,7 @@ import HomePage from './views/pages/login/HomePage'
 // import Table from './views/theme/colors/Table'
 import EditUser from './views/theme/colors/EditUser'
 import ActivationEmails from './views/theme/typography/ActivetionEmails'
+import ResetPasword from './views/pages/login/ResetPasword'
 
 const loading = (
   <div className="pt-3 text-center">
@@ -19,6 +20,7 @@ const DefaultLayout = React.lazy(() => import('./layout/DefaultLayout'))
 const Login = React.lazy(() => import('./views/pages/login/Login'))
 const Register = React.lazy(() => import('./views/pages/register/Register'))
 const Table = React.lazy(() => import('./views/theme/colors/Table'))
+const ForgotPasswordPage = React.lazy(() => import('./views/pages/login/ForgotPasswordPage'))
 
 class App extends Component {
   render() {
@@ -35,6 +37,12 @@ class App extends Component {
             />
             <Route
               exact
+              path="/forgotpassword"
+              name="ForgotPasswordPage"
+              render={(props) => <ForgotPasswordPage {...props} />}
+            />
+            <Route
+              exact
               path="/register"
               name="Register Page"
               render={(props) => <Register {...props} />}
@@ -47,6 +55,9 @@ class App extends Component {
             </Route>
             <Route path="/user/activate/:activetion_token" name="Activation" exact>
               <ActivationEmails />
+            </Route>
+            <Route path="/user/forgotpassword/:activetion_token" name="Activation" exact>
+              <ResetPasword />
             </Route>
             <Route path="/" name="Home" render={(props) => <DefaultLayout {...props} />} />
           </Switch>
